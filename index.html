@@ -1,0 +1,426 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Haithem is a Backend Software Engineer specializing in Node.js, TypeScript, Express, and NestJS. I build reliable, scalable APIs, microservices, and secure system architectures.">
+  <meta name="keywords" content="Backend Engineer, Node.js, TypeScript, NestJS, API Developer, Software Architecture">
+  <meta property="og:title" content="Haithem | Backend Engineer">
+  <meta property="og:description" content="Portfolio of Haithem, a Backend Software Engineer building reliable, scalable APIs and secure systems.">
+  <meta property="og:type" content="website">
+  
+  <title>Dev | Haithem</title>
+  
+  <!-- Modern SVG Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%234ade80'%3E%3Cpath d='M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-1.5 12h-13V8h13v8z'/%3E%3Cpath d='M6 10h2v2H6zm4 0h6v2h-6z'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Dynamic Cursor Glow -->
+  <div id="cursor-glow" class="cursor-glow"></div>
+
+  <!-- ─── NAVBAR ─────────────────────────── -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+
+      <a class="logo" href="#home">
+        <span class="logo-mark">H</span>
+        <span>AL Haithem</span>
+      </a>
+
+      <button class="nav-toggle" id="nav-toggle"
+              aria-label="Toggle menu" aria-expanded="false"
+              aria-controls="nav-menu">
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav-links" id="nav-menu" aria-label="Main navigation">
+        <a href="#about"    id="nl-about">About</a>
+        <a href="#journey"  id="nl-journey">Journey</a>
+        <a href="#skills"   id="nl-skills">Skills</a>
+        <a href="#contact"  id="nl-contact">Contact</a>
+      </nav>
+      
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Hacker Mode">
+        <span class="tt-icon">ðŸ’»</span>
+      </button>
+
+    </div>
+  </header>
+
+  <main id="home">
+
+    <!-- ─── HERO ──────────────────────────── -->
+    <section class="hero section" aria-labelledby="hero-h1">
+      <!-- Floating Blobs Background -->
+      <div class="hero-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+      </div>
+
+      <div class="container hero-inner">
+
+        <div class="hero-copy reveal">
+          <div class="hero-badge">
+            <span class="hero-badge-dot"></span>
+            Open to opportunities 💼
+          </div>
+
+          <h1 id="hero-h1">
+            Backend Engineer<br>building reliable systems<span class="wave-emoji">👋</span>
+          </h1>
+
+          <p class="hero-sub">
+            I design APIs, data layers, and service boundaries focused on clarity and
+            maintainability — from clean Express routes to Docker-ready deployments. ⚡
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#skills" id="cta-skills">View my stack 🚀</a>
+            <a class="btn btn-outline" href="#contact" id="cta-contact">Get in touch 📫</a>
+          </div>
+        </div>
+
+        <!-- Interactive Terminal -->
+        <div class="terminal-window reveal reveal-d2" aria-hidden="true">
+          <div class="tw-header">
+            <div class="tw-dots">
+              <span class="tw-dot red"></span>
+              <span class="tw-dot yellow"></span>
+              <span class="tw-dot green"></span>
+            </div>
+            <div class="tw-title">Haithem@backend-server: ~</div>
+          </div>
+          <div class="tw-body" id="terminal-body">
+            <!-- JS will inject typing effect here -->
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="about" class="section" aria-labelledby="about-h2">
+      <div class="container">
+
+        <div class="reveal">
+          <span class="section-label">About me</span>
+          <h2 class="section-title" id="about-h2">Game dev turned backend engineer.</h2>
+          <p class="section-desc">
+            I started as a game developer — scripting multiplayer systems, handling
+            client/server sync, and managing persistent data in real-time environments.
+            That foundation taught me how to think in systems under pressure.
+          </p>
+          <p class="section-desc" style="margin-top: 12px;">
+            Recently I transitioned fully into <strong>web development</strong>, channeling
+            that same mindset into building reliable backends with Node.js, Express,
+            and modern databases. I'm ready to join teams, contribute to real projects,
+            and grow fast through hands-on collaboration. 🚀
+          </p>
+        </div>
+
+        <!-- Strengths -->
+        <div style="display:flex; flex-wrap:wrap; gap:10px; margin-top:28px;" class="reveal reveal-d1">
+          <span class="tag interactive-tag">🎮 Game Dev Background</span>
+          <span class="tag interactive-tag">📚 Self-Learner</span>
+          <span class="tag interactive-tag">🚀 Fast Learner</span>
+          <span class="tag interactive-tag">💡 System Design Thinker</span>
+          <span class="tag interactive-tag">📂 Open to Collaboration</span>
+          <span class="tag interactive-tag">🌱 Always Growing</span>
+        </div>
+
+    </section>
+
+
+
+    <!-- ─── SKILLS ────────────────────────── -->
+    <section id="skills" class="section" aria-labelledby="skills-h2">
+      <div class="container">
+
+        <div class="skills-header reveal">
+          <span class="section-label">Technical skills</span>
+          <h2 class="section-title" id="skills-h2">What I know, what I'm learning, what's next.</h2>
+          <p class="section-desc">Click a card to explore each phase.</p>
+
+          <!-- Phase selector cards -->
+          <div class="phase-selector" role="tablist" aria-label="Skill phases">
+
+            <button class="phase-card active" data-phase="known"
+                    role="tab" aria-selected="true" aria-controls="panel-known" id="tab-known">
+              <div class="pc-icon-row">
+                <span class="pc-emoji">🟢</span>
+                <span class="pc-arrow">→</span>
+              </div>
+              <div class="pc-title">Experienced With</div>
+              <div class="pc-desc">Technologies I have solid hands-on experience with.</div>
+              <span class="pc-count" id="count-known">—</span>
+            </button>
+
+            <button class="phase-card" data-phase="learning"
+                    role="tab" aria-selected="false" aria-controls="panel-learning" id="tab-learning">
+              <div class="pc-icon-row">
+                <span class="pc-emoji">🟡</span>
+                <span class="pc-arrow">→</span>
+              </div>
+              <div class="pc-title">Current Focus</div>
+              <div class="pc-desc">What I am actively learning and applying right now.</div>
+              <span class="pc-count" id="count-learning">—</span>
+            </button>
+
+            <button class="phase-card" data-phase="future"
+                    role="tab" aria-selected="false" aria-controls="panel-future" id="tab-future">
+              <div class="pc-icon-row">
+                <span class="pc-emoji">🔴</span>
+                <span class="pc-arrow">→</span>
+              </div>
+              <div class="pc-title">Future Goals</div>
+              <div class="pc-desc">Next steps planned on my engineering roadmap.</div>
+              <span class="pc-count" id="count-future">—</span>
+            </button>
+
+          </div>
+        </div>
+
+        <!-- Phase: Known -->
+        <div class="phase-panel active" id="panel-known"
+             role="tabpanel" aria-labelledby="tab-known">
+          <div class="phase-heading green">
+            <span class="phase-heading-icon">🟢</span>
+            Technologies I have solid hands-on experience with
+            <span class="phase-count" id="count-known-label"></span>
+          </div>
+          <div class="categories-grid" id="grid-known"></div>
+        </div>
+
+        <!-- Phase: Learning -->
+        <div class="phase-panel" id="panel-learning"
+             role="tabpanel" aria-labelledby="tab-learning" hidden>
+          <div class="phase-heading yellow">
+            <span class="phase-heading-icon">🟡</span>
+            What I am actively learning and applying right now
+            <span class="phase-count" id="count-learning-label"></span>
+          </div>
+          <div class="categories-grid" id="grid-learning"></div>
+        </div>
+
+        <!-- Phase: Future -->
+        <div class="phase-panel" id="panel-future"
+             role="tabpanel" aria-labelledby="tab-future" hidden>
+          <div class="phase-heading red">
+            <span class="phase-heading-icon">🔴</span>
+            Technologies planned on my engineering roadmap
+            <span class="phase-count" id="count-future-label"></span>
+          </div>
+          <div class="categories-grid" id="grid-future"></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ─── JOURNEY ───────────────────────── -->
+    <section id="journey" class="section" aria-labelledby="journey-h2">
+      <div class="container">
+
+        <div class="reveal">
+          <span class="section-label">Learning journey</span>
+          <h2 class="section-title" id="journey-h2">How I got here.</h2>
+          <p class="section-desc">From game scripting to backend engineering.</p>
+        </div>
+
+        <div class="timeline reveal reveal-d1" id="journey-container"
+             aria-live="polite" aria-label="Learning timeline"></div>
+
+      </div>
+    </section>
+
+
+    <!-- ─── SYSTEM DESIGN ─────────────────── -->
+    <section id="architecture" class="section">
+      <div class="container">
+
+        <div class="reveal">
+          <span class="section-label">System Design</span>
+          <h2 class="section-title">Some of the authentication methods I have worked on <span style="color:var(--green)">✓</span></h2>
+          <p class="section-desc">Standard authentication patterns I implement for secure backend systems.</p>
+        </div>
+
+        <div class="sd2-grid reveal reveal-d1">
+
+          <!-- Method 1: Basic Authentication -->
+          <div class="sd2-card">
+            <div class="sd2-ready-badge">✓ Ready to build</div>
+            <div class="sd2-title-row">
+              <span class="sd2-icon">🔒</span>
+              <div>
+                <div class="sd2-title">Basic Authentication</div>
+                <div class="sd2-subtitle">Credentials sent in plain text format</div>
+              </div>
+            </div>
+            <div class="sd2-tags">
+              <span class="tag">HTTP Headers</span>
+              <span class="tag">Base64</span>
+              <span class="tag">HTTPS</span>
+            </div>
+          </div>
+
+          <!-- Method 2: Session Authentication -->
+          <div class="sd2-card">
+            <div class="sd2-ready-badge">✓ Ready to build</div>
+            <div class="sd2-title-row">
+              <span class="sd2-icon">📲</span>
+              <div>
+                <div class="sd2-title">Session Authentication</div>
+                <div class="sd2-subtitle">Server issues a session cookie</div>
+              </div>
+            </div>
+            <div class="sd2-tags">
+              <span class="tag">Cookie</span>
+              <span class="tag">Session Store</span>
+              <span class="tag">Redis</span>
+            </div>
+          </div>
+
+          <!-- Method 3: Token Authentication -->
+          <div class="sd2-card">
+            <div class="sd2-ready-badge">✓ Ready to build</div>
+            <div class="sd2-title-row">
+              <span class="sd2-icon">🎫</span>
+              <div>
+                <div class="sd2-title">Token Authentication</div>
+                <div class="sd2-subtitle">Clients authenticate once for a signed token</div>
+              </div>
+            </div>
+            <div class="sd2-tags">
+              <span class="tag">JWT</span>
+              <span class="tag">bcrypt</span>
+              <span class="tag">Stateless</span>
+            </div>
+          </div>
+
+          <!-- Method 4: OAuth-Based Authentication -->
+          <div class="sd2-card">
+            <div class="sd2-ready-badge">✓ Ready to build</div>
+            <div class="sd2-title-row">
+              <span class="sd2-icon">🛡️</span>
+              <div>
+                <div class="sd2-title">OAuth 2.0</div>
+                <div class="sd2-subtitle">Third-party provider integration</div>
+              </div>
+            </div>
+            <div class="sd2-tags">
+              <span class="tag">OAuth 2.0</span>
+              <span class="tag">Access Token</span>
+              <span class="tag">Auth Server</span>
+            </div>
+          </div>
+
+          <!-- Method 5: API Key Authentication -->
+          <div class="sd2-card">
+            <div class="sd2-ready-badge">✓ Ready to build</div>
+            <div class="sd2-title-row">
+              <span class="sd2-icon">🗝️</span>
+              <div>
+                <div class="sd2-title">API Key Authentication</div>
+                <div class="sd2-subtitle">Predefined key for authorized access</div>
+              </div>
+            </div>
+
+            <div class="sd2-tags">
+              <span class="tag">API Key</span>
+              <span class="tag">Server-to-Server</span>
+              <span class="tag">Webhooks</span>
+            </div>
+          </div>
+
+        </div>
+
+
+    </section>
+
+    <section id="contact" class="section" aria-labelledby="contact-h2">
+      <div class="container">
+
+        <div class="reveal">
+          <span class="section-label">Contact</span>
+          <h2 class="section-title" id="contact-h2">Let's talk.</h2>
+        </div>
+
+        <div class="contact-grid">
+
+          <div class="reveal reveal-d1">
+            <p class="contact-blurb">
+              Open to backend roles, freelance projects, and collaboration. 👇
+              Send a short message and I'll reply with a clear next step.
+            </p>
+            <div class="contact-links">
+              <a class="contact-link" href="mailto:haithempg@gmail.com" id="link-email">
+                <span class="cl-icon">✉</span>
+                Email
+              </a>
+              <a class="contact-link" href="https://github.com/" target="_blank"
+                 rel="noopener noreferrer" id="link-github">
+                <span class="cl-icon">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+                  </svg>
+                </span>
+                GitHub
+              </a>
+              <a class="contact-link" href="https://linkedin.com/" target="_blank"
+                 rel="noopener noreferrer" id="link-linkedin">
+                <span class="cl-icon">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                  </svg>
+                </span>
+                LinkedIn
+              </a>
+            </div>
+          </div>
+
+          <form class="contact-form reveal reveal-d2" id="contact-form" novalidate>
+            <div class="form-field">
+              <label for="f-name">Name</label>
+              <input type="text" id="f-name" name="name" placeholder="Your name" required autocomplete="name">
+            </div>
+            <div class="form-field">
+              <label for="f-email">Email</label>
+              <input type="email" id="f-email" name="email" placeholder="you@example.com" required autocomplete="email">
+            </div>
+            <div class="form-field">
+              <label for="f-message">Message</label>
+              <textarea id="f-message" name="message" placeholder="What would you like to discuss?" required></textarea>
+            </div>
+            <button class="btn btn-primary btn-submit" type="submit" id="btn-submit">
+              Send message ✉️ 
+            </button>
+          </form>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ─── FOOTER ────────────────────────── -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p class="footer-copy">&copy; <span id="footer-year">2026</span> AL Haithem — Backend Engineer</p>
+      <nav class="footer-nav" aria-label="Footer links">
+        <a href="#home">Top</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

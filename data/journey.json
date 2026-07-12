@@ -1,0 +1,51 @@
+[
+  {
+    "period": "Game Dev",
+    "title": "Game Engine — learning to think in systems",
+    "description": "Started as an independent game developer, building multiplayer games with client/server architecture, inventory and quest systems, event-driven programming, and data persistence. This experience taught me how to break down complex problems, design interconnected systems, and learn independently.",
+    "state": "completed"
+  },
+  {
+    "period": "Foundation",
+    "title": "Backend fundamentals",
+    "description": "Developed a strong foundation in backend engineering using JavaScript, Node.js, and Express.js. Built REST APIs, implemented authentication and authorization systems, designed middleware pipelines, and learned how to structure maintainable backend applications.",
+    "state": "completed"
+  },
+  {
+    "period": "Architecture & Security",
+    "title": "Designing maintainable systems",
+    "description": "Expanded into software architecture and security, exploring modular monoliths, clean architecture principles, API design, and secure application development. Gained experience with MongoDB, data modeling, JWT, RBAC, rate limiting, CORS, and common web security practices.",
+    "state": "completed"
+  },
+  {
+    "period": "Current Focus",
+    "title": "Moving toward production-ready systems",
+    "description": "Currently deepening my knowledge in the areas that make systems reliable and scalable:",
+    "points": [
+      "TypeScript and NestJS",
+      "API versioning and file handling",
+      "PostgreSQL and relational database design",
+      "Caching and Redis fundamentals",
+      "Docker and containerization",
+      "CI/CD, logging, and monitoring",
+      "Load balancing, proxies, and CDN concepts",
+      "OAuth2 and OpenID Connect",
+      "Testing with Jest and Supertest",
+      "Clean Architecture and scalable backend design"
+    ],
+    "state": "current"
+  },
+  {
+    "period": "Long-Term Direction",
+    "title": "Building expertise in distributed systems",
+    "description": "My long-term interests include:",
+    "points": [
+      "Event-Driven Architecture",
+      "GraphQL and gRPC",
+      "Distributed systems fundamentals",
+      "Cloud platforms and Kubernetes",
+      "Advanced system design and high-scale architectures"
+    ],
+    "state": "future"
+  }
+]

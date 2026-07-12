@@ -1,0 +1,37 @@
+:root {
+  --bg:          #0a0d14;
+  --bg-2:        #0e1219;
+  --surface:     #131820;
+  --surface-2:   #181f2a;
+  --border:      rgba(255, 255, 255, 0.08);
+  --border-2:    rgba(255, 255, 255, 0.13);
+
+  --text:        #f0f4ff;
+  --soft:        #9aabb8;
+  --muted:       #5a6878;
+
+  --green:       #4ade80;
+  --green-bg:    rgba(74, 222, 128, 0.08);
+  --green-bd:    rgba(74, 222, 128, 0.22);
+
+  --yellow:      #facc15;
+  --yellow-bg:   rgba(250, 204, 21, 0.08);
+  --yellow-bd:   rgba(250, 204, 21, 0.22);
+
+  --red:         #f87171;
+  --red-bg:      rgba(248, 113, 113, 0.08);
+  --red-bd:      rgba(248, 113, 113, 0.20);
+
+  --blue:        #60a5fa;
+  --blue-bg:     rgba(96, 165, 250, 0.08);
+  --blue-bd:     rgba(96, 165, 250, 0.20);
+
+  --radius:      8px;
+  --radius-lg:   14px;
+  --radius-xl:   20px;
+
+  --nav-h:       64px;
+  --container:   min(1440px, calc(100% - 8vw));
+
+  --shadow:      0 8px 32px rgba(0,0,0,0.4);
+}

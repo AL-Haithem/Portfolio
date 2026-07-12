@@ -1,0 +1,144 @@
+{
+  "known": {
+    "label": "Experienced With",
+    "color": "green",
+    "categories": [
+      {
+        "name": "Languages",
+        "items": ["JavaScript", "Python", "Luau"]
+      },
+      {
+        "name": "Runtime & Frameworks",
+        "items": ["Node.js", "Express.js"]
+      },
+      {
+        "name": "API Development",
+        "items": ["REST API", "WebSockets", "Server-Sent Events", "Long Polling"]
+      },
+      {
+        "name": "API Design",
+        "items": ["RESTful Design", "Pagination", "Filtering", "Sorting", "Search", "Idempotency"]
+      },
+      {
+        "name": "Application Design",
+        "items": ["Middleware", "Validation", "Error Handling"]
+      },
+      {
+        "name": "Databases",
+        "items": ["MongoDB"]
+      },
+      {
+        "name": "Authentication",
+        "items": ["Session Authentication", "JWT", "API Keys"]
+      },
+      {
+        "name": "Authorization",
+        "items": ["RBAC", "Permissions"]
+      },
+      {
+        "name": "Web Security",
+        "items": ["CORS", "CSRF", "XSS", "SQL Injection", "SSRF", "Clickjacking"]
+      },
+      {
+        "name": "Security Practices",
+        "items": ["Password Hashing", "Encryption", "Secrets Management", "Security Headers", "Refresh Tokens", "Rate Limiting"]
+      },
+      {
+        "name": "Architectural Styles",
+        "items": ["Monolith", "Modular Monolith", "Microservices"]
+      },
+      {
+        "name": "Scalability",
+        "items": ["Vertical Scaling", "Stateless Services"]
+      },
+      {
+        "name": "Performance",
+        "items": ["Compression", "Lazy Loading"]
+      }
+    ]
+  },
+  "learning": {
+    "label": "Current Focus",
+    "color": "yellow",
+    "categories": [
+      {
+        "name": "Languages",
+        "items": ["TypeScript"]
+      },
+      {
+        "name": "Runtime & Frameworks",
+        "items": ["NestJS"]
+      },
+      {
+        "name": "API Design",
+        "items": ["API Versioning"]
+      },
+      {
+        "name": "Application Design",
+        "items": ["File Uploads"]
+      },
+      {
+        "name": "Authentication",
+        "items": ["OAuth2", "OpenID Connect"]
+      },
+      {
+        "name": "Architecture Patterns",
+        "items": ["Clean Architecture"]
+      },
+      {
+        "name": "Scalability",
+        "items": ["Horizontal Scaling"]
+      },
+      {
+        "name": "Performance",
+        "items": ["Caching", "Cache Invalidation", "Connection Pooling"]
+      },
+      {
+        "name": "Traffic Management",
+        "items": ["Load Balancer", "Reverse Proxy", "Forward Proxy", "CDN"]
+      },
+      {
+        "name": "Containers",
+        "items": ["Docker", "Docker Compose", "Containerization"]
+      },
+      {
+        "name": "Others",
+        "items": ["CI/CD", "Monitoring", "Logging"]
+      }
+    ]
+  },
+  "future": {
+    "label": "Future Goals",
+    "color": "red",
+    "categories": [
+      {
+        "name": "Languages",
+        "items": ["Go"]
+      },
+      {
+        "name": "API Development",
+        "items": ["GraphQL", "gRPC"]
+      },
+      {
+        "name": "Relational Databases",
+        "items": ["PostgreSQL", "MySQL"]
+      },
+      {
+        "name": "Authorization",
+        "items": ["ABAC"]
+      },
+      {
+        "name": "Architectural Styles",
+        "items": ["Event-Driven Architecture"]
+      },
+      {
+        "name": "Architecture Patterns",
+        "items": ["Layered Architecture", "Hexagonal Architecture", "Onion Architecture"]
+      },
+      {
+        "name": "Others",
+        "items": ["Nginx", "Cloud Providers", "Kubernetes"]
+      }
+    ]
+  }
+}
