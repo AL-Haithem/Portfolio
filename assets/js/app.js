@@ -1,6 +1,6 @@
-'use strict';
+﻿'use strict';
 
-/* ─── Escape HTML to prevent XSS ─── */
+/* â”€â”€â”€ Escape HTML to prevent XSS â”€â”€â”€ */
 function esc(str) {
   if (typeof str !== 'string') return '';
   return str
@@ -11,7 +11,7 @@ function esc(str) {
     .replace(/'/g, '&#39;');
 }
 
-/* ─── Fetch JSON with fallback ─── */
+/* â”€â”€â”€ Fetch JSON with fallback â”€â”€â”€ */
 async function fetchJson(url, fallback) {
   try {
     const res = await fetch(url);
@@ -24,7 +24,7 @@ async function fetchJson(url, fallback) {
   }
 }
 
-/* ─── Skeleton HTML ─── */
+/* â”€â”€â”€ Skeleton HTML â”€â”€â”€ */
 function skeleton(n = 3) {
   return Array.from({ length: n }, () => `
     <div class="skeleton-card">
@@ -40,9 +40,9 @@ function skeleton(n = 3) {
   `).join('');
 }
 
-/* ═══════════════════════════════════════
-   SKILLS — three-phase tab system
-   ═══════════════════════════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   SKILLS â€” three-phase tab system
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
 const FALLBACK_SKILLS = {
   known: {
@@ -131,7 +131,7 @@ async function renderSkills() {
   });
 }
 
-/* ─── Phase Tab Switching ─── */
+/* â”€â”€â”€ Phase Tab Switching â”€â”€â”€ */
 function setupPhaseTabs() {
   const tabs = document.querySelectorAll('.phase-card');
   const panels = document.querySelectorAll('.phase-panel');
@@ -168,9 +168,9 @@ function setupPhaseTabs() {
 
 
 
-/* ═══════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    JOURNEY / TIMELINE
-   ═══════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
 const FALLBACK_JOURNEY = [
 ];
@@ -210,9 +210,9 @@ async function renderJourney() {
   `).join('');
 }
 
-/* ═══════════════════════════════════════
-   NAVBAR — scroll + mobile toggle
-   ═══════════════════════════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   NAVBAR â€” scroll + mobile toggle
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
 function setupNavbar() {
   const navbar = document.getElementById('navbar');
@@ -275,9 +275,9 @@ function setupNavbar() {
   sections.forEach(s => sectionObs.observe(s));
 }
 
-/* ═══════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    SCROLL REVEAL
-   ═══════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
 function setupReveal() {
   const els = document.querySelectorAll('.reveal');
@@ -295,9 +295,9 @@ function setupReveal() {
   els.forEach(el => obs.observe(el));
 }
 
-/* ═══════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    CONTACT FORM
-   ═══════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
 function setupForm() {
   const form   = document.getElementById('contact-form');
@@ -321,11 +321,11 @@ function setupForm() {
     if (!valid) return;
 
     btn.disabled    = true;
-    btn.textContent = 'Sending…';
+    btn.textContent = 'Sendingâ€¦';
 
     await new Promise(r => setTimeout(r, 1000));
 
-    btn.textContent = '✓ Sent!';
+    btn.textContent = 'âœ“ Sent!';
     btn.style.background = 'var(--green)';
     form.reset();
 
@@ -337,9 +337,9 @@ function setupForm() {
   });
 }
 
-/* ═══════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    INTERACTIVE ELEMENTS
-   ═══════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
 function setupCursorGlow() {
   const glow = document.getElementById('cursor-glow');
@@ -426,26 +426,11 @@ function setupTerminal() {
   obs.observe(term);
 }
 
-function setupHackerMode() {
-  const toggle = document.getElementById('theme-toggle');
-  if (!toggle) return;
-
-  // Check saved pref
-  if (localStorage.getItem('hackerMode') === 'true') {
-    document.body.classList.add('hacker-mode');
-  }
-
-  toggle.addEventListener('click', () => {
-    document.body.classList.toggle('hacker-mode');
-    const isHacker = document.body.classList.contains('hacker-mode');
-    localStorage.setItem('hackerMode', isHacker);
-  });
-}
 
 
-/* ═══════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    INIT
-   ═══════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
 document.addEventListener('DOMContentLoaded', () => {
   // Footer year
@@ -458,7 +443,6 @@ document.addEventListener('DOMContentLoaded', () => {
   setupPhaseTabs();
   setupCursorGlow();
   setupTerminal();
-  setupHackerMode();
 
   renderSkills();
   renderJourney().then(() => {

@@ -5,15 +5,15 @@
     "categories": [
       {
         "name": "Languages",
-        "items": ["JavaScript", "Python", "Luau"]
+        "items": ["JavaScript", "Python", "Luau","CSS","HTML"]
       },
       {
         "name": "Runtime & Frameworks",
-        "items": ["Node.js", "Express.js"]
+        "items": ["Node.js", "Express.js","React.js"]
       },
       {
         "name": "API Development",
-        "items": ["REST API", "WebSockets", "Server-Sent Events", "Long Polling"]
+        "items": ["REST API", "WebSockets", "SSE", "Long Polling"]
       },
       {
         "name": "API Design",
@@ -67,7 +67,7 @@
       },
       {
         "name": "Runtime & Frameworks",
-        "items": ["NestJS"]
+        "items": ["NestJS","NextJS"]
       },
       {
         "name": "API Design",
@@ -113,7 +113,7 @@
     "categories": [
       {
         "name": "Languages",
-        "items": ["Go"]
+        "items": ["GO","PHP","JAVA"]
       },
       {
         "name": "API Development",
