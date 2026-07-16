@@ -424,7 +424,7 @@ var usersDB=[],currentUser=null,rateLimitMap={},simDelay=0;
       resetDelay();
       addEntry('CK','mw','Clearing local session state','text',d(0));
       addEntry('OK','ok','Logged out locally','ok',d(200));
-      showLogin();
+      updateView();
       showMsg('Logged out.');
     });
 
