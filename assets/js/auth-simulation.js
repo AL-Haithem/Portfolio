@@ -396,7 +396,7 @@ var usersDB=[],currentUser=null,rateLimitMap={},simDelay=0;
       clearSim();
       addEntry('REQ','mw','→ POST /api/auth/register','text',0);
       try{
-        const res=await fetch('https://store-eznk.onrender.com/api/auth/register',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({username:name,email,password}),credentials:'include'});
+        const res=await fetch('https://api.alhaithem.site/api/auth/register',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({username:name,email,password}),credentials:'include'});
         const data=await res.json().catch(()=>res.text().then(t=>t));
         buildRegisterPipeline(res,data,name,email,password);
         if(!res.ok){showMsg((typeof data==='string'?data:data?.message)||'Registration failed',true);}
@@ -410,7 +410,7 @@ var usersDB=[],currentUser=null,rateLimitMap={},simDelay=0;
       clearSim();
       addEntry('REQ','mw','→ POST /api/auth/login','text',0);
       try{
-        const res=await fetch('https://store-eznk.onrender.com/api/auth/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email,password}),credentials:'include'});
+        const res=await fetch('https://api.alhaithem.site/api/auth/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email,password}),credentials:'include'});
         const data=await res.json().catch(()=>res.text().then(t=>t));
         buildLoginPipeline(res,data,email,password);
         if(!res.ok){showMsg((typeof data==='string'?data:data?.message)||'Login failed',true);}
@@ -438,7 +438,7 @@ var usersDB=[],currentUser=null,rateLimitMap={},simDelay=0;
         sendOtpBtn.innerText='Sending...';
         sendOtpBtn.disabled=true;
         try{
-          const res=await fetch('https://store-eznk.onrender.com/api/auth/forgot-password',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email}),credentials:'include'});
+          const res=await fetch('https://api.alhaithem.site/api/auth/forgot-password',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email}),credentials:'include'});
           const data=await res.json().catch(()=>res.text().then(t=>t));
           buildForgotPipeline(res,data,email);
           sendOtpBtn.innerText='Get OTP';
@@ -473,7 +473,7 @@ var usersDB=[],currentUser=null,rateLimitMap={},simDelay=0;
         resetPwdBtn.innerText='Resetting...';
         resetPwdBtn.disabled=true;
         try{
-          const res=await fetch('https://store-eznk.onrender.com/api/auth/confirm-forgot-password',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email,code,newPassword,confirmNewPassword}),credentials:'include'});
+          const res=await fetch('https://api.alhaithem.site/api/auth/confirm-forgot-password',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email,code,newPassword,confirmNewPassword}),credentials:'include'});
           const data=await res.json().catch(()=>res.text().then(t=>t));
           buildConfirmResetPipeline(res,data);
           resetPwdBtn.innerText='Reset Password';
