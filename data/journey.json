@@ -1,51 +1,32 @@
 [
   {
-    "period": "Game Dev",
-    "title": "Game Engine — learning to think in systems",
-    "description": "Started as an independent game developer, building multiplayer games with client/server architecture, inventory and quest systems, event-driven programming, and data persistence. This experience taught me how to break down complex problems, design interconnected systems, and learn independently.",
+    "period": "Game Development",
+    "title": "Learning to think in systems",
+    "description": "Started as an independent game developer, where I learned how to break complex ideas into systems, iterate quickly, and solve problems independently. Working on multiplayer games introduced me to client/server communication, game architecture, and long-term project development.",
     "state": "completed"
   },
   {
-    "period": "Foundation",
-    "title": "Backend fundamentals",
-    "description": "Developed a strong foundation in backend engineering using JavaScript, Node.js, and Express.js. Built REST APIs, implemented authentication and authorization systems, designed middleware pipelines, and learned how to structure maintainable backend applications.",
+    "period": "Backend Foundations",
+    "title": "Transitioning to backend engineering",
+    "description": "Transitioned from game development to backend engineering, focusing on building maintainable server-side applications and understanding how web systems communicate, process requests, and manage data.",
     "state": "completed"
   },
   {
     "period": "Architecture & Security",
     "title": "Designing maintainable systems",
-    "description": "Expanded into software architecture and security, exploring modular monoliths, clean architecture principles, API design, and secure application development. Gained experience with MongoDB, data modeling, JWT, RBAC, rate limiting, CORS, and common web security practices.",
+    "description": "Shifted my attention toward designing maintainable software, learning architectural principles, secure application development, and production-oriented backend practices.",
     "state": "completed"
   },
   {
-    "period": "Current Focus",
+    "period": "Production Engineering",
     "title": "Moving toward production-ready systems",
-    "description": "Currently deepening my knowledge in the areas that make systems reliable and scalable:",
-    "points": [
-      "TypeScript and NestJS",
-      "API versioning and file handling",
-      "PostgreSQL and relational database design",
-      "Caching and Redis fundamentals",
-      "Docker and containerization",
-      "CI/CD, logging, and monitoring",
-      "Load balancing, proxies, and CDN concepts",
-      "OAuth2 and OpenID Connect",
-      "Testing with Jest and Supertest",
-      "Clean Architecture and scalable backend design"
-    ],
+    "description": "Currently focusing on the technologies and engineering practices required to build reliable production systems, with an emphasis on scalability, maintainability, deployment, and modern backend architecture.",
     "state": "current"
   },
   {
-    "period": "Long-Term Direction",
-    "title": "Building expertise in distributed systems",
-    "description": "My long-term interests include:",
-    "points": [
-      "Event-Driven Architecture",
-      "GraphQL and gRPC",
-      "Distributed systems fundamentals",
-      "Cloud platforms and Kubernetes",
-      "Advanced system design and high-scale architectures"
-    ],
+    "period": "Long-Term Vision",
+    "title": "Distributed systems & high-scale engineering",
+    "description": "My long-term goal is to deepen my understanding of distributed systems, cloud-native architectures, and high-scale backend engineering while continuing to improve my system design skills.",
     "state": "future"
   }
 ]

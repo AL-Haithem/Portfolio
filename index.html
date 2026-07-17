@@ -44,8 +44,8 @@
       <nav class="nav-links" id="nav-menu" aria-label="Main navigation">
         <a href="#about"    id="nl-about">About</a>
         <a href="#skills"   id="nl-skills">Skills</a>
-        <a href="#journey"  id="nl-journey">Journey</a>
         <a href="#works"    id="nl-works">Works</a>
+        <a href="#journey"  id="nl-journey">Journey</a>
         <a href="#contact"  id="nl-contact">Contact</a>
       </nav>
 
@@ -89,8 +89,9 @@
           </h1>
 
           <p class="hero-sub">
-            I build reliable, scalable APIs and architect backend systems that
-            handle real-world load — from auth pipelines to Docker-ready services.
+            I build reliable backend APIs with Node.js and Express, focusing on maintainable
+            architecture, security, and production-ready development. I enjoy designing scalable
+            systems and continuously improving my engineering practices.
           </p>
 
           <!-- Tech Stack Pills -->
@@ -110,6 +111,17 @@
             </a>
             <a class="btn btn-outline" href="#contact" id="cta-contact">Get in touch</a>
           </div>
+
+          <!-- Simplified Stats -->
+          <div class="hero-stats-simple">
+            <span>⚡ Node.js + Express</span>
+            <span class="dot-sep">•</span>
+            <span>🏗️ Backend & Arch</span>
+            <span class="dot-sep">•</span>
+            <span style="color:var(--green)">🎯 Open to Work</span>
+            <span class="dot-sep">•</span>
+            <span>📍 Indie Game Dev</span>
+          </div>
         </div>
 
         <!-- Interactive Terminal -->
@@ -120,7 +132,7 @@
               <span class="tw-dot yellow"></span>
               <span class="tw-dot green"></span>
             </div>
-            <div class="tw-title">Haithem@backend-server: ~</div>
+            <div class="tw-title">alhaithem@demo-server: ~</div>
           </div>
           <div class="tw-body" id="terminal-body">
             <!-- JS will inject typing effect here -->
@@ -138,15 +150,22 @@
             <span class="section-label">About me</span>
             <h2 class="section-title" id="about-h2">Game dev turned Backend Engineer.</h2>
             <p class="section-desc">
-              Started by scripting multiplayer game systems — real-time sync,
-              client/server pipelines, persistent state under pressure.
-              That mindset carries directly into backend engineering.
+              Game developer turned Backend Engineer.
             </p>
             <p class="section-desc" style="margin-top: 14px;">
-              Now I build production-grade APIs with <strong>Node.js</strong> and
-              <strong>Express</strong>, design data layers, and architect systems
-              built to scale. Actively seeking roles where I can ship real products
-              and grow alongside strong engineering teams.
+              My journey started in multiplayer game development, where I learned to design
+              interconnected systems, manage client/server communication, and solve complex
+              problems independently.
+            </p>
+            <p class="section-desc" style="margin-top: 14px;">
+              Today, I focus on backend engineering with <strong>Node.js</strong> and
+              <strong>Express</strong>, building secure APIs, designing maintainable
+              architectures, and continuously expanding my knowledge of scalable systems
+              and modern backend technologies.
+            </p>
+            <p class="section-desc" style="margin-top: 14px;">
+              I'm currently looking for opportunities to contribute to real products, learn
+              from experienced engineers, and grow within a strong engineering team.
             </p>
 
             <!-- Trait badges -->
@@ -160,29 +179,7 @@
             </div>
           </div>
 
-          <!-- About side stats -->
-          <div class="about-stats reveal reveal-d2">
-            <div class="about-stat-card">
-              <div class="asc-icon">⚡</div>
-              <div class="asc-label">Primary Stack</div>
-              <div class="asc-value">Node.js + Express</div>
-            </div>
-            <div class="about-stat-card">
-              <div class="asc-icon">🏗️</div>
-              <div class="asc-label">Focus Area</div>
-              <div class="asc-value">Backend & Arch</div>
-            </div>
-            <div class="about-stat-card">
-              <div class="asc-icon">🎯</div>
-              <div class="asc-label">Status</div>
-              <div class="asc-value" style="color:var(--green)">Open to Work</div>
-            </div>
-            <div class="about-stat-card">
-              <div class="asc-icon">📍</div>
-              <div class="asc-label">Background</div>
-              <div class="asc-value">Indie Game Dev</div>
-            </div>
-          </div>
+
         </div>
 
       </div><!-- /.container -->
@@ -274,24 +271,25 @@
       </div>
     </section>
 
+
+<section id="works" class="section"><div class="container"><div class="reveal"><span class="section-label">Portfolio</span><h2 class="section-title">My Works.</h2><p class="section-desc">Projects I've built and experimented with.</p></div><div class="sd2-grid reveal reveal-d1"><div class="sd2-card" style="cursor:pointer;" id="auth-project-card"><div class="sd2-ready-badge">&#10003; Interactive Demo</div><div class="sd2-title-row"><span class="sd2-icon">&#128274;</span><div><div class="sd2-title">Authentication System</div><div class="sd2-subtitle">In-memory mock &mdash; watch the backend pipeline live</div></div></div><div class="sd2-tags"><span class="tag">Express</span> <span class="tag">Mongoose</span> <span class="tag">Joi</span> <span class="tag">JWT</span> <span class="tag">bcrypt</span></div></div></div></div></section>
+
     <!-- ─── JOURNEY ───────────────────────── -->
     <section id="journey" class="section" aria-labelledby="journey-h2">
       <div class="container">
 
         <div class="reveal">
-          <span class="section-label">Learning journey</span>
+          <span class="section-label">Engineering journey</span>
           <h2 class="section-title" id="journey-h2">How I got here.</h2>
           <p class="section-desc">From game scripting to backend engineering.</p>
         </div>
 
         <div class="timeline reveal reveal-d1" id="journey-container"
-             aria-live="polite" aria-label="Learning timeline"></div>
+             aria-live="polite" aria-label="Engineering timeline"></div>
 
       </div>
     </section>
 
-
-<section id="works" class="section"><div class="container"><div class="reveal"><span class="section-label">Portfolio</span><h2 class="section-title">My Works.</h2><p class="section-desc">Projects I've built and experimented with.</p></div><div class="sd2-grid reveal reveal-d1"><div class="sd2-card" style="cursor:pointer;" id="auth-project-card"><div class="sd2-ready-badge">&#10003; Interactive Demo</div><div class="sd2-title-row"><span class="sd2-icon">&#128274;</span><div><div class="sd2-title">Authentication System</div><div class="sd2-subtitle">In-memory mock &mdash; watch the backend pipeline live</div></div></div><div class="sd2-tags"><span class="tag">Express</span> <span class="tag">Mongoose</span> <span class="tag">Joi</span> <span class="tag">JWT</span> <span class="tag">bcrypt</span></div></div></div></div></section>
 
     <section id="contact" class="section section-contact" aria-labelledby="contact-h2">
       <div class="container">

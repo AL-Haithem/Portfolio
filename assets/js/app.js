@@ -1,4 +1,4 @@
-﻿'use strict';
+'use strict';
 
 /* â”€â”€â”€ Escape HTML to prevent XSS â”€â”€â”€ */
 function esc(str) {
@@ -381,17 +381,17 @@ function setupTerminal() {
   if (!term) return;
 
   const lines = [
-    { text: "curl -X GET https://api.haithem.dev/profile", delay: 800, type: "cmd" },
-    { text: "{\n  \"name\": \"Haithem\",\n  \"role\": \"Backend Engineer\",\n  \"stack\": [\"Node.js\", \"Express\", \"MongoDB\", \"Docker\"],\n  \"status\": \"Open to work\",\n  \"response_time\": \"24ms\"\n}", delay: 300, type: "output" },
-    { text: "haithem@backend-server: ~ $ ", delay: 100, type: "prompt" }
+    { text: "curl -X GET https://api.example.com/v1/profile", delay: 800, type: "cmd" },
+    { text: "{\n  \"name\": \"AL Haithem\",\n  \"role\": \"Backend Engineer\",\n  \"stack\": [\"Node.js\", \"Express\", \"MongoDB\", \"Docker\"],\n  \"status\": \"Open to work\",\n  \"response_time\": \"24ms\"\n}", delay: 300, type: "output" },
+    { text: "alhaithem@demo-server: ~ $ ", delay: 100, type: "prompt" }
   ];
 
   let currentLine = 0;
-  term.innerHTML = "haithem@backend-server: ~ $ <span class=\"tw-cursor\"></span>";
+  term.innerHTML = "alhaithem@demo-server: ~ $ <span class=\"tw-cursor\"></span>";
 
   async function typeLine(lineObj) {
     if (lineObj.type === 'cmd') {
-      let currentText = "haithem@backend-server: ~ $ ";
+      let currentText = "alhaithem@demo-server: ~ $ ";
       term.innerHTML = currentText + "<span class=\"tw-cursor\"></span>";
       for (let i = 0; i < lineObj.text.length; i++) {
         currentText += lineObj.text.charAt(i);
