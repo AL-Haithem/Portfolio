@@ -245,12 +245,55 @@ export default function AuthModal({ open, onClose }) {
     }
   }
 
-  const handleLogout = () => {
-    setCurrentUser(null)
+  const handleLogout = async () => {
+    setLoading(true)
     clearSim()
-    addEntry('CK','mw','Clearing local session state','text', 0)
-    addEntry('OK','ok','Logged out locally','ok', 50)
-    showMsg('Logged out.')
+    
+    try {
+      await addEntry('REQ','req','GET /api/auth/csrf','text', 100)
+      const csrfRes = await fetch('https://api.alhaithem.site/api/auth/csrf', {
+        method: 'GET',
+        credentials: 'include'
+      })
+      
+      let csrfData = {}
+      try { csrfData = await csrfRes.json() } catch(e){}
+      
+      if (csrfRes.ok && csrfData.csrfToken) {
+        await addEntry('RES','res','200 OK (CSRF Received)','text', 50)
+        await addEntry('REQ','req','POST /api/auth/logout','text', 100)
+        
+        const logoutRes = await fetch('https://api.alhaithem.site/api/auth/logout', {
+          method: 'POST',
+          credentials: 'include',
+          headers: {
+            'Content-Type': 'application/json',
+            'x-csrf-token': csrfData.csrfToken
+          }
+        })
+        
+        let logoutData = {}
+        try { logoutData = await logoutRes.json() } catch(e){}
+        
+        if (logoutRes.ok) {
+          await addEntry('RES','res', `200 OK (${logoutData.message || 'Logged out'})`,'ok', 50)
+          setCurrentUser(null)
+          showMsg('Logged out successfully.')
+        } else {
+          await addEntry('ERR','err',`Logout failed: ${logoutData.message || logoutRes.status}`,'fail', 50)
+          showMsg(logoutData.message || 'Logout failed', true)
+        }
+      } else {
+        await addEntry('ERR','err',`CSRF failed: ${csrfData.message || csrfRes.status}`,'fail', 50)
+        showMsg(csrfData.message || 'Not authorized (No valid session to logout)', true)
+      }
+    } catch (err) {
+      console.error(err)
+      await addEntry('ERR','err','Network error','fail', 0)
+      showMsg('Network error', true)
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -328,13 +371,18 @@ export default function AuthModal({ open, onClose }) {
             )}
 
             {currentUser && (
-              <div id="dashboard-view" style={{textAlign: 'center'}}>
+              <div id="dashboard-view" style={{textAlign: 'center', marginTop: '20px'}}>
                 <p style={{fontSize: '2.5rem', marginBottom: '10px'}}>&#10003;</p>
                 <h4 style={{color: 'var(--green, #4ade80)', marginBottom: '8px'}}>Welcome, <span id="user-name-display">{currentUser.name}</span>!</h4>
                 <p style={{fontSize: '13px', marginBottom: '20px', opacity: 0.6}}>Authenticated</p>
-                <button id="logout-btn" className="btn btn-outline" style={{width: '100%'}} onClick={handleLogout}>Logout</button>
               </div>
             )}
+
+            <div className="permanent-logout-container" style={{marginTop: 'auto', paddingTop: '20px', borderTop: '1px solid rgba(255,255,255,0.05)'}}>
+              <button id="server-logout-btn" className="btn-logout-special" onClick={handleLogout} disabled={loading}>
+                <span className="logout-icon">⏻</span> Force Server Logout
+              </button>
+            </div>
           </div>
           
           <div className="auth-right">
