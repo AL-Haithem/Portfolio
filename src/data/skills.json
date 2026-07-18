@@ -9,7 +9,7 @@
       },
       {
         "name": "Application Development",
-        "items": ["Middleware", "Validation", "Error Handling"]
+        "items": ["Middlewares", "Validation", "Error Handling"]
       },
       {
         "name": "API Development",
