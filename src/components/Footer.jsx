@@ -7,7 +7,7 @@ export default function Footer() {
         </div>
         <div className="footer-nav">
           <a href="https://github.com/AL-Haithem" target="_blank" rel="noopener noreferrer">GitHub</a>
-          <a href="www.linkedin.com/in/al-haithem-998304423" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://www.linkedin.com/in/al-haithem-998304423" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           <a href="mailto:haithempg@gmail.com">Email</a>
         </div>
       </div>

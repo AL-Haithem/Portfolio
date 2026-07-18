@@ -41,7 +41,7 @@ export default function Contact() {
             </div>
           </a>
 
-          <a href="www.linkedin.com/in/al-haithem-998304423" target="_blank" rel="noopener noreferrer" className="social-card reveal reveal-d3" id="card-linkedin">
+          <a href="https://www.linkedin.com/in/al-haithem-998304423" target="_blank" rel="noopener noreferrer" className="social-card reveal reveal-d3" id="card-linkedin">
             <div className="sc-glow sc-glow-blue"></div>
             <div className="sc-icon-wrap sc-icon-linkedin">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
