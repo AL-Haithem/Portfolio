@@ -18,22 +18,29 @@ export default function App() {
 
   return (
     <BrowserRouter>
-      <Routes>
-        <CursorGlow />
-        <Navbar />
-        <main id="home">
-          <Hero />
-          <Works onOpenAuth={() => setAuthOpen(true)} />
-          <Skills />
-          <About />
-          <Journey />
-          <Contact />
-        </main>
-        <Footer />
-        <AuthModal open={authOpen} onClose={() => setAuthOpen(false)} />
 
-        <Route path="*" element={<NotFound />} />  
-      </Routes>
+      <CursorGlow />
+      <Navbar />
+
+        <Routes>
+
+          <Route path="/" element={
+            <main id="home">
+              <Hero />
+              <Works onOpenAuth={() => setAuthOpen(true)} />
+              <Skills />
+              <About />
+              <Journey />
+              <Contact />
+            </main>
+          }/>
+
+          <Route path="*" element={<NotFound />} />  
+        </Routes>
+
+      <Footer />
+      <AuthModal open={authOpen} onClose={() => setAuthOpen(false)} />
+
     </BrowserRouter>
   )
 }
