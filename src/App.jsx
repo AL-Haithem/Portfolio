@@ -16,31 +16,31 @@ import NotFound from './NotFound.jsx'
 export default function App() {
   const [authOpen, setAuthOpen] = useState(false)
 
-  return (
-    <BrowserRouter>
+return (
+  <BrowserRouter>
 
-      <CursorGlow />
+    <CursorGlow />
 
-        <Routes>
+      <Routes>
 
-          <Route path="/" element={
-            <main id="home">
-              <Navbar />
-              <Hero />
-              <Works onOpenAuth={() => setAuthOpen(true)} />
-              <Skills />
-              <About />
-              <Journey />
-              <Contact />
-            </main>
-          }/>
+        <Route path="/" element={
+          <main id="home">
+            <Navbar />
+            <Hero />
+            <Works onOpenAuth={() => setAuthOpen(true)} />
+            <Skills />
+            <About />
+            <Journey />
+            <Contact />
+          </main>
+        }/>
 
-          <Route path="*" element={<NotFound />} />  
-        </Routes>
+        <Route path="*" element={<NotFound />} />  
+
+      </Routes>
 
       <Footer />
       <AuthModal open={authOpen} onClose={() => setAuthOpen(false)} />
 
     </BrowserRouter>
-  )
-}
+)}
