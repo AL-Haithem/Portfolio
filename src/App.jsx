@@ -20,12 +20,12 @@ export default function App() {
     <BrowserRouter>
 
       <CursorGlow />
-      <Navbar />
 
         <Routes>
 
           <Route path="/" element={
             <main id="home">
+              <Navbar />
               <Hero />
               <Works onOpenAuth={() => setAuthOpen(true)} />
               <Skills />
