@@ -67,7 +67,7 @@
       },
       {
         "name": "Scalability & Performance",
-        "items": ["Horizontal Scaling","Caching", "Cache Invalidation", "Connection Pooling"]
+        "items": ["Horizontal Scaling","Caching (Redis)", "Cache Invalidation", "Connection Pooling"]
       },
       {
         "name": "Traffic Management",

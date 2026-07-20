@@ -59,7 +59,7 @@ export default function Navbar() {
         </button>
 
         <nav className={`nav-links${menuOpen ? ' open' : ''}`} id="nav-menu" aria-label="Main navigation">
-          {['about','skills','works','journey','contact'].map(s => (
+          {['works','skills','about','journey','contact'].map(s => (
             <a key={s} href={`#${s}`} onClick={() => setMenuOpen(false)}>
               {s.charAt(0).toUpperCase() + s.slice(1)}
             </a>
