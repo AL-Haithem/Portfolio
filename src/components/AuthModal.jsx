@@ -18,7 +18,18 @@ export default function AuthModal({ open, onClose }) {
   const [forgotConfirm, setForgotConfirm] = useState('')
   const [otpSent, setOtpSent] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [savedCsrf, setSavedCsrf] = useState(null)
   const logsEndRef = useRef(null)
+
+  useEffect(() => {
+    if (open && !currentUser) {
+      fetch('https://api.alhaithem.site/api/auth/check', { credentials: 'include' })
+        .then(res => {
+          if (res.ok) setCurrentUser({ email: 'User', name: 'User' })
+        })
+        .catch(() => {})
+    }
+  }, [open])
 
   useEffect(() => {
     if (logsEndRef.current) {
@@ -99,13 +110,19 @@ export default function AuthModal({ open, onClose }) {
         await addEntry('CK','mw','set-cookie("access_token")','text', 50)
         await addEntry('OK','ok','200 OK — Registered successfully!','ok', 50)
         
+        if (data.csrfToken) setSavedCsrf(data.csrfToken)
+
         showMsg('Registration successful! Please login.')
         setTimeout(() => {
           setTab('login')
           setName(''); setEmail(''); setPassword('')
         }, 1500)
+      } else if (data.message === 'ALREADY_LOGGED_IN') {
+        await addEntry('OK','ok','Already logged in!','ok', 100)
+        setCurrentUser({ email: email || 'User', name: (email || 'User').split('@')[0] })
+        showMsg('You are already logged in!')
       } else {
-        await addEntry('CON','db',`✗ ${data.message || 'Error'}`, 'fail', 100)
+        await addEntry('CON','db',`o- ${data.message || 'Error'}`, 'fail', 100)
         showMsg(data.message || 'Registration failed', true)
       }
     } catch(err) {
@@ -152,11 +169,17 @@ export default function AuthModal({ open, onClose }) {
         await addEntry('CK','mw','set-cookie("access_token")','text', 50)
         await addEntry('OK','ok','200 OK — Logged in!','ok', 50)
         
+        if (data.csrfToken) setSavedCsrf(data.csrfToken)
+
         setCurrentUser({ email, name: email.split('@')[0] })
         showMsg('Login successful!')
         setEmail(''); setPassword('')
+      } else if (data.message === 'ALREADY_LOGGED_IN') {
+        await addEntry('OK','ok','Already logged in!','ok', 100)
+        setCurrentUser({ email: email || 'User', name: (email || 'User').split('@')[0] })
+        showMsg('You are already logged in!')
       } else {
-        await addEntry('CON','err',`✗ ${data.message || 'Login failed'}`, 'fail', 100)
+        await addEntry('CON','err',`o- ${data.message || 'Login failed'}`, 'fail', 100)
         showMsg(data.message || 'Login failed', true)
       }
     } catch(err) {
@@ -250,17 +273,32 @@ export default function AuthModal({ open, onClose }) {
     clearSim()
     
     try {
-      await addEntry('REQ','req','GET /api/auth/csrf','text', 100)
-      const csrfRes = await fetch('https://api.alhaithem.site/api/auth/csrf', {
-        method: 'GET',
-        credentials: 'include'
-      })
+      let csrfToken = savedCsrf
+      let csrfMessage = null
+      let csrfStatus = 200
+
+      if (!csrfToken) {
+        await addEntry('REQ','req','GET /api/auth/csrf','text', 100)
+        const csrfRes = await fetch('https://api.alhaithem.site/api/auth/csrf', {
+          method: 'GET',
+          credentials: 'include'
+        })
+        
+        let csrfData = {}
+        try { csrfData = await csrfRes.json() } catch(e){}
+        csrfMessage = csrfData.message
+        csrfStatus = csrfRes.status
+        
+        if (csrfRes.ok && csrfData.csrfToken) {
+          csrfToken = csrfData.csrfToken
+          setSavedCsrf(csrfToken)
+          await addEntry('RES','res','200 OK (CSRF Received)','text', 50)
+        }
+      } else {
+        await addEntry('CK','mw','Using cached CSRF token','text', 50)
+      }
       
-      let csrfData = {}
-      try { csrfData = await csrfRes.json() } catch(e){}
-      
-      if (csrfRes.ok && csrfData.csrfToken) {
-        await addEntry('RES','res','200 OK (CSRF Received)','text', 50)
+      if (csrfToken) {
         await addEntry('REQ','req','POST /api/auth/logout','text', 100)
         
         const logoutRes = await fetch('https://api.alhaithem.site/api/auth/logout', {
@@ -268,7 +306,7 @@ export default function AuthModal({ open, onClose }) {
           credentials: 'include',
           headers: {
             'Content-Type': 'application/json',
-            'x-csrf-token': csrfData.csrfToken
+            'x-csrf-token': csrfToken
           }
         })
         
@@ -278,14 +316,25 @@ export default function AuthModal({ open, onClose }) {
         if (logoutRes.ok) {
           await addEntry('RES','res', `200 OK (${logoutData.message || 'Logged out'})`,'ok', 50)
           setCurrentUser(null)
+          setSavedCsrf(null)
           showMsg('Logged out successfully.')
+        } else if (logoutData.message === 'ALREADY_LOGGED_OUT') {
+          await addEntry('RES','res', '200 OK (Already logged out)','ok', 50)
+          setCurrentUser(null)
+          setSavedCsrf(null)
+          showMsg('You are already logged out.')
         } else {
           await addEntry('ERR','err',`Logout failed: ${logoutData.message || logoutRes.status}`,'fail', 50)
           showMsg(logoutData.message || 'Logout failed', true)
         }
+      } else if (csrfMessage === 'ALREADY_LOGGED_OUT') {
+        await addEntry('RES','res', '200 OK (Already logged out)','ok', 50)
+        setCurrentUser(null)
+        setSavedCsrf(null)
+        showMsg('You are already logged out.')
       } else {
-        await addEntry('ERR','err',`CSRF failed: ${csrfData.message || csrfRes.status}`,'fail', 50)
-        showMsg(csrfData.message || 'Not authorized (No valid session to logout)', true)
+        await addEntry('ERR','err',`CSRF failed: ${csrfMessage || csrfStatus}`,'fail', 50)
+        showMsg(csrfMessage || 'Not authorized (No valid session to logout)', true)
       }
     } catch (err) {
       console.error(err)
