@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "title": "System Metrics & Dashboard",
+    "description": "Real-time monitoring of server health, SSE metrics, and overall statistics.",
+    "urls": [
+      "https://res.cloudinary.com/b6ztyqia/image/upload/v1784720097/image_1_nk4c4s.png",
+      "https://res.cloudinary.com/b6ztyqia/image/upload/v1784720067/image_2_vz4fed.png"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Web Crawler Engine",
+    "description": "Automated data extraction and game catalog management.",
+    "urls": [
+      "https://res.cloudinary.com/b6ztyqia/image/upload/v1784719801/Screenshot_2026-07-22_122832_kr28vy.png",
+      "https://res.cloudinary.com/b6ztyqia/image/upload/v1784721159/Screenshot_2026-07-22_125121_dmiemp.png" 
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Data & Cache Manager",
+    "description": "Redis cache statistics and database management interface.",
+    "urls": [
+      "https://via.placeholder.com/800x450/1a1a1a/4ade80?text=Data+Manager+1",
+      "https://via.placeholder.com/800x450/1a1a1a/4ade80?text=Data+Manager+2"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "System Logs",
+    "description": "Detailed activity logs and error tracking.",
+    "urls": [
+      "https://res.cloudinary.com/b6ztyqia/image/upload/v1784719945/Screenshot_2026-07-22_122931_jco1wj.png"
+    ]
+  }
+]
