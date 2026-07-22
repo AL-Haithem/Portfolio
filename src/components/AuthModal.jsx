@@ -29,7 +29,7 @@ export default function AuthModal({ open, onClose }) {
         })
         .catch(() => {})
     }
-  }, [open])
+  }, [open, currentUser])
 
   useEffect(() => {
     if (logsEndRef.current) {
@@ -285,7 +285,7 @@ export default function AuthModal({ open, onClose }) {
         })
         
         let csrfData = {}
-        try { csrfData = await csrfRes.json() } catch(e){}
+        try { csrfData = await csrfRes.json() } catch {}
         csrfMessage = csrfData.message
         csrfStatus = csrfRes.status
         
@@ -311,7 +311,7 @@ export default function AuthModal({ open, onClose }) {
         })
         
         let logoutData = {}
-        try { logoutData = await logoutRes.json() } catch(e){}
+        try { logoutData = await logoutRes.json() } catch {}
         
         if (logoutRes.ok) {
           await addEntry('RES','res', `200 OK (${logoutData.message || 'Logged out'})`,'ok', 50)
@@ -346,8 +346,8 @@ export default function AuthModal({ open, onClose }) {
   }
 
   return (
-    <div id="auth-modal" className="auth-modal">
-      <div className="auth-modal-content">
+    <div id="auth-modal" className="auth-modal" onClick={onClose}>
+      <div className="auth-modal-content" onClick={(e) => e.stopPropagation()}>
         <button id="auth-modal-close" className="auth-modal-close" onClick={onClose}>&times;</button>
         <div className="auth-layout">
           <div className="auth-left">

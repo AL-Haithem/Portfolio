@@ -1,31 +1,7 @@
 import { useState } from 'react';
-import adminImages from '../data/lootAdminImages.json';
 
 export default function Works({ onOpenAuth }) {
   const [adminModalOpen, setAdminModalOpen] = useState(false);
-
-  const scrollGallery = (id, direction) => {
-    const el = document.getElementById(`gallery-${id}`);
-    if (el) {
-      const scrollAmount = el.clientWidth;
-      const currentScroll = Math.ceil(el.scrollLeft);
-      const maxScroll = el.scrollWidth - el.clientWidth;
-      
-      if (direction === 'right') {
-        if (currentScroll >= maxScroll - 10) {
-          el.scrollTo({ left: 0, behavior: 'smooth' });
-        } else {
-          el.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-        }
-      } else {
-        if (currentScroll <= 10) {
-          el.scrollTo({ left: maxScroll, behavior: 'smooth' });
-        } else {
-          el.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-        }
-      }
-    }
-  };
 
   return (
     <section id="works" className="section">
@@ -99,56 +75,65 @@ export default function Works({ onOpenAuth }) {
 
       {/* Admin Panel Images Modal */}
       {adminModalOpen && (
-        <div className="auth-modal" style={{ zIndex: 9999 }}>
-          <style>{`
-            .admin-gallery-scroll::-webkit-scrollbar { display: none; }
-            .admin-gallery-scroll { -ms-overflow-style: none; scrollbar-width: none; }
-          `}</style>
-          <div className="auth-modal-content" style={{ maxWidth: '900px', width: '90%', maxHeight: '90vh', overflowY: 'auto', padding: '30px' }}>
+        <div className="auth-modal" style={{ zIndex: 9999 }} onClick={() => setAdminModalOpen(false)}>
+          <div className="auth-modal-content" style={{ maxWidth: '900px', width: '90%', maxHeight: '90vh', overflowY: 'auto', padding: '30px' }} onClick={(e) => e.stopPropagation()}>
             <button className="auth-modal-close" onClick={() => setAdminModalOpen(false)}>&times;</button>
             <h2 style={{ marginBottom: '20px', color: 'var(--green, #4ade80)' }}>📸 Loot Store Admin Panel</h2>
             <p style={{ marginBottom: '20px', color: '#aaa', fontSize: '14px' }}>
               Since the admin panel is private and contains sensitive data, here is a showcase of its fully automated dashboard, pricing controls, and analytics.
             </p>
             
-            <div style={{ display: 'grid', gap: '20px' }}>
-              {adminImages.map((image) => (
-                <div key={image.id} style={{ background: '#111', borderRadius: '10px', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.1)' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+              {/* Video Player */}
+              <div style={{ background: '#111', borderRadius: '10px', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.1)' }}>
+                <video 
+                  src="https://res.cloudinary.com/b6ztyqia/video/upload/v1784733679/2026-07-22_16-17-43_as9nxw.mp4" 
+                  controls 
+                  autoPlay 
+                  loop 
+                  muted 
+                  style={{ width: '100%', display: 'block' }} 
+                />
+              </div>
+
+              {/* Sections Description */}
+              <div style={{ background: '#111', borderRadius: '10px', padding: '20px', border: '1px solid rgba(255,255,255,0.1)' }}>
+                <h3 style={{ marginBottom: '15px', color: 'var(--green, #4ade80)' }}>Admin Panel Features</h3>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '15px' }}>
                   
-                  {/* Image Gallery Container */}
-                  <div style={{ position: 'relative' }}>
-                    {image.urls && image.urls.length > 1 && (
-                      <>
-                        <button 
-                          onClick={(e) => { e.stopPropagation(); scrollGallery(image.id, 'left'); }}
-                          style={{ position: 'absolute', left: '10px', top: '50%', transform: 'translateY(-50%)', zIndex: 10, background: 'rgba(0,0,0,0.6)', color: '#fff', border: '1px solid rgba(255,255,255,0.2)', borderRadius: '50%', width: '36px', height: '36px', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '16px', transition: '0.2s' }}>
-                          &#10094;
-                        </button>
-                        <button 
-                          onClick={(e) => { e.stopPropagation(); scrollGallery(image.id, 'right'); }}
-                          style={{ position: 'absolute', right: '10px', top: '50%', transform: 'translateY(-50%)', zIndex: 10, background: 'rgba(0,0,0,0.6)', color: '#fff', border: '1px solid rgba(255,255,255,0.2)', borderRadius: '50%', width: '36px', height: '36px', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '16px', transition: '0.2s' }}>
-                          &#10095;
-                        </button>
-                      </>
-                    )}
-                    <div id={`gallery-${image.id}`} style={{ display: 'flex', overflowX: 'auto', scrollSnapType: 'x mandatory', scrollBehavior: 'smooth', WebkitOverflowScrolling: 'touch' }} className="admin-gallery-scroll">
-                      {image.urls && image.urls.map((url, idx) => (
-                        <img key={idx} src={url} alt={`${image.title} - ${idx + 1}`} style={{ minWidth: '100%', width: '100%', scrollSnapAlign: 'start', display: 'block', objectFit: 'cover' }} />
-                      ))}
-                    </div>
+                  <div style={{ padding: '10px', background: 'rgba(255,255,255,0.02)', borderRadius: '8px' }}>
+                    <h4 style={{ margin: '0 0 5px 0', fontSize: '14px' }}><i className="fas fa-chart-pie" style={{marginRight: '8px', color: '#9aabb8'}}></i>Dashboard</h4>
+                    <p style={{ margin: 0, fontSize: '12px', color: '#888' }}>Main analytics, sales overview, and quick stats.</p>
+                  </div>
+                  
+                  <div style={{ padding: '10px', background: 'rgba(255,255,255,0.02)', borderRadius: '8px' }}>
+                    <h4 style={{ margin: '0 0 5px 0', fontSize: '14px' }}><i className="fas fa-microchip" style={{marginRight: '8px', color: '#9aabb8'}}></i>System</h4>
+                    <p style={{ margin: 0, fontSize: '12px', color: '#888' }}>Real-time server health and SSE monitoring metrics.</p>
                   </div>
 
-                  <div style={{ padding: '15px' }}>
-                    <h4 style={{ margin: '0 0 5px 0' }}>{image.title}</h4>
-                    <p style={{ margin: 0, fontSize: '13px', color: '#888' }}>{image.description}</p>
-                    {image.urls && image.urls.length > 1 && (
-                      <p style={{ margin: '8px 0 0 0', fontSize: '11px', color: '#555', fontStyle: 'italic', display: 'flex', alignItems: 'center', gap: '5px' }}>
-                        <span>↔️</span> Click the arrows or swipe to see more images ({image.urls.length} images)
-                      </p>
-                    )}
+                  <div style={{ padding: '10px', background: 'rgba(255,255,255,0.02)', borderRadius: '8px' }}>
+                    <h4 style={{ margin: '0 0 5px 0', fontSize: '14px' }}><i className="fas fa-robot" style={{marginRight: '8px', color: '#9aabb8'}}></i>Data Crawler</h4>
+                    <p style={{ margin: 0, fontSize: '12px', color: '#888' }}>Automated game catalog extraction and auto-pricing.</p>
                   </div>
+
+                  <div style={{ padding: '10px', background: 'rgba(255,255,255,0.02)', borderRadius: '8px' }}>
+                    <h4 style={{ margin: '0 0 5px 0', fontSize: '14px' }}><i className="fas fa-server" style={{marginRight: '8px', color: '#9aabb8'}}></i>Cache Memory</h4>
+                    <p style={{ margin: 0, fontSize: '12px', color: '#888' }}>Redis cache management and performance stats.</p>
+                  </div>
+
+                  <div style={{ padding: '10px', background: 'rgba(255,255,255,0.02)', borderRadius: '8px' }}>
+                    <h4 style={{ margin: '0 0 5px 0', fontSize: '14px' }}><i className="fas fa-database" style={{marginRight: '8px', color: '#9aabb8'}}></i>Data Management</h4>
+                    <p style={{ margin: 0, fontSize: '12px', color: '#888' }}>Direct database control for products and orders.</p>
+                  </div>
+
+                  <div style={{ padding: '10px', background: 'rgba(255,255,255,0.02)', borderRadius: '8px' }}>
+                    <h4 style={{ margin: '0 0 5px 0', fontSize: '14px' }}><i className="fas fa-history" style={{marginRight: '8px', color: '#9aabb8'}}></i>Logs & Settings</h4>
+                    <p style={{ margin: 0, fontSize: '12px', color: '#888' }}>System activity logs, error tracking, and global configs.</p>
+                  </div>
+
                 </div>
-              ))}
+              </div>
+
             </div>
           </div>
         </div>
