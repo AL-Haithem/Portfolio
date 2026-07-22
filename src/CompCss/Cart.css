@@ -1,0 +1,236 @@
+.cart-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 30px;
+    background: rgba(10, 14, 28, 0.95);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.btn-back {
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.2s;
+}
+
+.btn-back:hover {
+    color: var(--accent-primary);
+}
+
+.header-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.header-title i {
+    color: var(--accent-primary);
+}
+
+.header-placeholder {
+    width: 80px;
+}
+
+/* Main */
+.cart-main {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Empty State */
+.empty-cart {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.empty-icon {
+    font-size: 5rem;
+    margin-bottom: 20px;
+    opacity: 0.5;
+}
+
+.empty-cart h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: var(--text-secondary);
+}
+
+.empty-cart p {
+    color: var(--text-secondary);
+    margin-bottom: 30px;
+}
+
+.btn-browse {
+    display: inline-block;
+    padding: 14px 32px;
+    background: linear-gradient(135deg, var(--accent-primary), #0080ff);
+    color: #000;
+    font-weight: 700;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+
+.btn-browse:hover {
+    opacity: 0.85;
+}
+
+/* Cart Layout */
+.cart-layout {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 30px;
+    align-items: start;
+}
+
+@media (max-width: 768px) {
+    .cart-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Cart Item */
+.cart-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    padding: 14px 16px;
+    margin-bottom: 14px;
+    transition: border-color 0.2s;
+}
+
+.cart-item:hover {
+    border-color: rgba(0, 240, 255, 0.25);
+}
+
+.cart-item img {
+    width: 90px;
+    height: 54px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.cart-item-info {
+    flex: 1;
+}
+
+.cart-item-name {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.cart-item-price {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--accent-green);
+}
+
+.cart-item-remove {
+    background: rgba(255, 0, 85, 0.15);
+    border: 1px solid rgba(255, 0, 85, 0.3);
+    color: var(--accent-secondary);
+    border-radius: 8px;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: background 0.2s;
+}
+
+.cart-item-remove:hover {
+    background: rgba(255, 0, 85, 0.3);
+}
+
+/* Summary Card */
+.cart-summary {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 24px;
+    position: sticky;
+    top: 90px;
+}
+
+.summary-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+}
+
+.summary-row.total {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border-color);
+}
+
+.summary-row.total span:last-child {
+    color: var(--accent-green);
+}
+
+.checkout-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 14px;
+    transition: opacity 0.2s, transform 0.1s;
+    font-family: 'Outfit', sans-serif;
+}
+
+.checkout-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+.checkout-btn:active {
+    transform: translateY(0);
+}
+
+.whatsapp-btn {
+    background: #25d366;
+    color: #fff;
+}
+
+.clear-btn {
+    background: rgba(255, 0, 85, 0.15);
+    border: 1px solid rgba(255, 0, 85, 0.3);
+    color: var(--accent-secondary);
+}
+
+.clear-btn:hover {
+    background: rgba(255, 0, 85, 0.25);
+}

@@ -1,0 +1,209 @@
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #030712;
+  background-image: linear-gradient(to bottom, rgba(3, 7, 18, 0.8), rgba(3, 7, 18, 0.8)), url('https://images.unsplash.com/photo-1538481199705-c710c4e965fc?q=80&w=2560&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 2rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.auth-container {
+  background: rgba(17, 24, 39, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 18px;
+  width: 100%;
+  max-width: 440px;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  padding: 40px;
+  color: #fff;
+  animation: slideUp 0.4s ease-out forwards;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.auth-header img {
+  width: 50px;
+  margin-bottom: 15px;
+}
+.auth-header h2 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 5px;
+  color: #fff;
+}
+.auth-header p {
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
+
+.auth-tabs {
+  display: flex;
+  margin-bottom: 25px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 4px;
+}
+.auth-tab {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: #888;
+  padding: 10px 0;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: 'Inter', sans-serif;
+}
+.auth-tab.active {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+.auth-tab.active::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 25%;
+  width: 50%;
+  height: 2px;
+  background: #00f2fe;
+  border-radius: 2px;
+  box-shadow: 0 0 8px #00f2fe;
+}
+
+.auth-field {
+  margin-bottom: 18px;
+}
+.auth-field label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 13px;
+  color: #94a3b8;
+  font-weight: 500;
+}
+.auth-field input {
+  width: 100%;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.3s ease;
+  font-family: 'Inter', sans-serif;
+}
+.auth-field input:focus {
+  border-color: #00f2fe;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 10px rgba(0, 242, 254, 0.15);
+}
+.auth-field input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.auth-forgot-link {
+  display: block;
+  text-align: right;
+  font-size: 12px;
+  color: #94a3b8;
+  margin-top: 8px;
+  cursor: pointer;
+  transition: color 0.2s;
+  text-decoration: none;
+}
+.auth-forgot-link:hover {
+  color: #00f2fe;
+}
+
+.auth-submit-btn {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #00f2fe, #3b82f6);
+  color: #030712;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-family: 'Inter', sans-serif;
+  margin-top: 10px;
+}
+.auth-submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 242, 254, 0.4);
+}
+.auth-submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.auth-back-btn {
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  font-size: 13px;
+  cursor: pointer;
+  transition: color 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0;
+  margin-bottom: 20px;
+}
+.auth-back-btn:hover {
+  color: #fff;
+}
+
+.auth-message {
+  font-size: 13px;
+  font-weight: 600;
+  min-height: 20px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+.auth-message.error {
+  color: #f87171;
+}
+.auth-message.success {
+  color: #4ade80;
+}
+
+.return-home {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  transition: color 0.3s;
+  text-decoration: none;
+}
+.return-home:hover {
+  color: #fff;
+}

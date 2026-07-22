@@ -1,0 +1,494 @@
+/* ========== Admin Login Page ========== */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap');
+
+/* ---- Variables (inherits from index.css + extends for admin) ---- */
+:root {
+  --adm-accent:       #00f2fe;
+  --adm-accent-glow:  rgba(0, 242, 254, 0.35);
+  --adm-accent2:      #3b82f6;
+  --adm-danger:       #f87171;
+  --adm-success:      #10b981;
+  --adm-bg:           #030712;
+  --adm-card-bg:      rgba(17, 24, 39, 0.70);
+  --adm-glass-border: rgba(255, 255, 255, 0.09);
+  --adm-glass-shadow: 0 8px 40px 0 rgba(0, 0, 0, 0.55);
+  --adm-blur:         14px;
+  --adm-radius-lg:    20px;
+  --adm-radius-md:    12px;
+  --adm-radius-sm:    8px;
+  --adm-font-head:    'Outfit', sans-serif;
+  --adm-font-body:    'Inter', sans-serif;
+}
+
+/* ---- Page Wrapper ---- */
+.admin-login-page {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--adm-bg);
+  font-family: var(--adm-font-body);
+  position: relative;
+  overflow: hidden;
+}
+
+/* ---- Animated Background Glow ---- */
+.adm-bg-glow {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 70% 60% at 70% 20%, rgba(0, 242, 254, 0.09) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 50% at 20% 80%, rgba(139, 92, 246, 0.07) 0%, transparent 50%),
+    radial-gradient(ellipse 50% 40% at 50% 50%, rgba(59, 130, 246, 0.04) 0%, transparent 60%);
+  animation: adminGlowPulse 12s ease-in-out infinite alternate;
+}
+
+@keyframes adminGlowPulse {
+  from { transform: scale(1) rotate(0deg); opacity: 0.8; }
+  to   { transform: scale(1.06) rotate(2deg); opacity: 1; }
+}
+
+/* ---- Grid Lines Overlay ---- */
+.adm-grid-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(0, 242, 254, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 242, 254, 0.025) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 80%);
+}
+
+/* ---- Floating Particles ---- */
+.adm-particle {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  animation: floatParticle linear infinite;
+  opacity: 0;
+}
+.adm-particle:nth-child(1) { width: 3px; height: 3px; background: var(--adm-accent); left: 15%; top: 80%; animation-duration: 18s; animation-delay: 0s; }
+.adm-particle:nth-child(2) { width: 2px; height: 2px; background: var(--adm-accent2); left: 40%; top: 90%; animation-duration: 22s; animation-delay: 3s; }
+.adm-particle:nth-child(3) { width: 4px; height: 4px; background: rgba(139,92,246,0.8); left: 65%; top: 85%; animation-duration: 16s; animation-delay: 6s; }
+.adm-particle:nth-child(4) { width: 2px; height: 2px; background: var(--adm-accent); left: 80%; top: 75%; animation-duration: 20s; animation-delay: 2s; }
+.adm-particle:nth-child(5) { width: 3px; height: 3px; background: var(--adm-accent2); left: 25%; top: 70%; animation-duration: 25s; animation-delay: 8s; }
+
+@keyframes floatParticle {
+  0%   { transform: translateY(0) translateX(0); opacity: 0; }
+  10%  { opacity: 0.7; }
+  90%  { opacity: 0.5; }
+  100% { transform: translateY(-90vh) translateX(30px); opacity: 0; }
+}
+
+/* ---- Login Card ---- */
+.adm-login-card {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 440px;
+  padding: 2.8rem 2.5rem 2.5rem;
+  background: var(--adm-card-bg);
+  backdrop-filter: blur(var(--adm-blur));
+  -webkit-backdrop-filter: blur(var(--adm-blur));
+  border: 1px solid var(--adm-glass-border);
+  border-radius: var(--adm-radius-lg);
+  box-shadow: var(--adm-glass-shadow), 0 0 0 1px rgba(0,242,254,0.04);
+  animation: cardSlideIn 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes cardSlideIn {
+  from { opacity: 0; transform: translateY(28px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ---- Card Top Accent Line ---- */
+.adm-login-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--adm-accent), var(--adm-accent2), transparent);
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0 0 16px var(--adm-accent-glow);
+}
+
+/* ---- Card Header ---- */
+.adm-card-header {
+  text-align: center;
+  margin-bottom: 2.2rem;
+}
+
+.adm-logo-wrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(0,242,254,0.15), rgba(59,130,246,0.1));
+  border: 1px solid rgba(0,242,254,0.25);
+  box-shadow: 0 0 24px rgba(0,242,254,0.15), inset 0 1px 0 rgba(255,255,255,0.08);
+  margin-bottom: 1.2rem;
+  position: relative;
+  animation: logoPulse 3s ease-in-out infinite;
+}
+
+@keyframes logoPulse {
+  0%, 100% { box-shadow: 0 0 24px rgba(0,242,254,0.15), inset 0 1px 0 rgba(255,255,255,0.08); }
+  50%       { box-shadow: 0 0 36px rgba(0,242,254,0.30), inset 0 1px 0 rgba(255,255,255,0.08); }
+}
+
+.adm-logo-wrap i {
+  font-size: 1.7rem;
+  background: linear-gradient(135deg, var(--adm-accent), var(--adm-accent2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.adm-card-header h1 {
+  font-family: var(--adm-font-head);
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 6px;
+  letter-spacing: -0.3px;
+}
+
+.adm-card-header .adm-subtitle {
+  font-size: 0.83rem;
+  color: #64748b;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.adm-subtitle-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--adm-success);
+  box-shadow: 0 0 8px rgba(16,185,129,0.6);
+  display: inline-block;
+  animation: dotBlink 2s ease-in-out infinite;
+}
+
+@keyframes dotBlink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
+
+/* ---- Divider ---- */
+.adm-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--adm-glass-border), transparent);
+  margin-bottom: 1.8rem;
+}
+
+/* ---- Form ---- */
+.adm-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.adm-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.adm-field label {
+  font-size: 0.80rem;
+  font-weight: 500;
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+.adm-field label i {
+  font-size: 0.72rem;
+  color: var(--adm-accent);
+  opacity: 0.8;
+}
+
+/* ---- Input Wrapper ---- */
+.adm-input-wrap {
+  position: relative;
+}
+
+.adm-input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--adm-glass-border);
+  border-radius: var(--adm-radius-sm);
+  color: #f1f5f9;
+  padding: 12px 44px 12px 14px;
+  font-family: var(--adm-font-body);
+  font-size: 0.875rem;
+  transition: all 0.3s ease;
+  outline: none;
+  letter-spacing: 0.2px;
+}
+
+.adm-input::placeholder {
+  color: #374151;
+  font-size: 0.83rem;
+}
+
+.adm-input:focus {
+  background: rgba(0, 242, 254, 0.04);
+  border-color: var(--adm-accent);
+  box-shadow: 0 0 0 3px rgba(0, 242, 254, 0.08), 0 0 12px rgba(0,242,254,0.06);
+}
+
+.adm-input.has-error {
+  border-color: var(--adm-danger);
+  background: rgba(248, 113, 113, 0.04);
+  box-shadow: 0 0 0 3px rgba(248,113,113,0.07);
+}
+
+/* ---- Input Icon ---- */
+.adm-input-icon {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #374151;
+  font-size: 0.85rem;
+  pointer-events: none;
+  transition: color 0.3s ease;
+}
+
+.adm-input-wrap:focus-within .adm-input-icon {
+  color: var(--adm-accent);
+}
+
+/* ---- Password Toggle ---- */
+.adm-pw-toggle {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #374151;
+  font-size: 0.85rem;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.3s ease;
+  line-height: 1;
+}
+
+.adm-pw-toggle:hover {
+  color: var(--adm-accent);
+}
+
+/* When password toggle is shown, shift icon */
+.adm-input-wrap.has-toggle .adm-input {
+  padding-right: 44px;
+}
+
+/* ---- Error Message ---- */
+.adm-field-error {
+  font-size: 0.76rem;
+  color: var(--adm-danger);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  animation: errorSlide 0.25s ease-out;
+  min-height: 1rem;
+}
+
+.adm-field-error:empty {
+  display: none;
+}
+
+@keyframes errorSlide {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---- Submit Button ---- */
+.adm-submit-btn {
+  margin-top: 0.6rem;
+  width: 100%;
+  padding: 13px 24px;
+  background: linear-gradient(135deg, var(--adm-accent), var(--adm-accent2));
+  color: #030712;
+  font-family: var(--adm-font-head);
+  font-size: 0.95rem;
+  font-weight: 700;
+  border: none;
+  border-radius: var(--adm-radius-md);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.3px;
+}
+
+.adm-submit-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.15), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.adm-submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px var(--adm-accent-glow), 0 4px 12px rgba(59,130,246,0.3);
+}
+
+.adm-submit-btn:hover::before {
+  opacity: 1;
+}
+
+.adm-submit-btn:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.adm-submit-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ---- Loading Spinner ---- */
+.adm-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(3,7,18,0.3);
+  border-top-color: #030712;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ---- Global Error Alert ---- */
+.adm-global-error {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 11px 14px;
+  background: rgba(248, 113, 113, 0.08);
+  border: 1px solid rgba(248, 113, 113, 0.25);
+  border-radius: var(--adm-radius-sm);
+  font-size: 0.82rem;
+  color: #fca5a5;
+  animation: errorSlide 0.3s ease-out;
+  line-height: 1.5;
+}
+
+.adm-global-error i {
+  color: var(--adm-danger);
+  font-size: 0.85rem;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* ---- Success Toast ---- */
+.adm-success-toast {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 14px;
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  border-radius: var(--adm-radius-sm);
+  font-size: 0.82rem;
+  color: #6ee7b7;
+  animation: errorSlide 0.3s ease-out;
+}
+
+.adm-success-toast i {
+  color: var(--adm-success);
+  flex-shrink: 0;
+}
+
+/* ---- Card Footer ---- */
+.adm-card-footer {
+  margin-top: 1.8rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--adm-glass-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 0.76rem;
+  color: #374151;
+}
+
+.adm-footer-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #1e293b;
+}
+
+.adm-shield-badge {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #4b5563;
+  font-size: 0.76rem;
+}
+
+.adm-shield-badge i {
+  color: var(--adm-accent);
+  font-size: 0.72rem;
+  opacity: 0.6;
+}
+
+/* ---- Rate Limit Notice ---- */
+.adm-rate-notice {
+  text-align: center;
+  font-size: 0.73rem;
+  color: #374151;
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.adm-rate-notice i {
+  font-size: 0.68rem;
+  color: #1e293b;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 500px) {
+  .adm-login-card {
+    margin: 1rem;
+    padding: 2rem 1.5rem;
+    max-width: 100%;
+  }
+  .adm-card-header h1 {
+    font-size: 1.4rem;
+  }
+}
