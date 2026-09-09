@@ -2,31 +2,31 @@
   {
     "period": "Game Development",
     "title": "Learning to think in systems",
-    "description": "Started as an independent game developer, where I learned how to break complex ideas into systems, iterate quickly, and solve problems independently. Working on multiplayer games introduced me to client/server communication, game architecture, and long-term project development.",
+    "description": "Started as an independent game developer, where I learned how to break complex ideas into systems, iterate quickly, and solve problems independently. Working on multiplayer games introduced me to client/server communication, game architecture, and long-term project development",
     "state": "completed"
   },
   {
     "period": "Backend Foundations",
     "title": "Transitioning to backend engineering",
-    "description": "Transitioned from game development to backend engineering, focusing on building maintainable server-side applications and understanding how web systems communicate, process requests, and manage data.",
+    "description": "Transitioned from game development to backend engineering, focusing on building maintainable server-side applications and understanding how web systems communicate, process requests, and manage data",
     "state": "completed"
   },
   {
     "period": "Architecture & Security",
     "title": "Designing maintainable systems",
-    "description": "Shifted my attention toward designing maintainable software, learning architectural principles, secure application development, and production-oriented backend practices.",
+    "description": "Shifted my attention toward designing maintainable software, learning architectural principles, secure application development, and production-oriented backend practices",
     "state": "completed"
   },
   {
     "period": "Production Engineering",
     "title": "Moving toward production-ready systems",
-    "description": "Currently focusing on the technologies and engineering practices required to build reliable production systems, with an emphasis on scalability, maintainability, deployment, and modern backend architecture.",
+    "description": "Currently focusing on the technologies and engineering practices required to build reliable production systems, with an emphasis on scalability, maintainability, deployment, and modern backend architecture",
     "state": "current"
   },
   {
     "period": "Long-Term Vision",
     "title": "Distributed systems & high-scale engineering",
-    "description": "My long-term goal is to deepen my understanding of distributed systems, cloud-native architectures, and high-scale backend engineering while continuing to improve my system design skills.",
+    "description": "My long-term goal is to deepen my understanding of distributed systems, cloud-native architectures, and high-scale backend engineering while continuing to improve my system design skills",
     "state": "future"
   }
 ]

@@ -54,10 +54,10 @@ export default function CacheStats({ isActive, metrics }) {
                 <i className="fas fa-exchange-alt"></i> Traffic Overview
               </div>
               <div className="stats-mini-grid">
-                <StatCard label="Daily Read Req." value={extractValue(data.daily_read_requests)} />
-                <StatCard label="Daily Write Req." value={extractValue(data.daily_write_requests)} />
-                <StatCard label="Monthly Read Req." value={extractValue(data.total_monthly_read_requests)} />
-                <StatCard label="Monthly Write Req." value={extractValue(data.total_monthly_write_requests)} />
+                <StatCard label="Daily Read Req" value={extractValue(data.daily_read_requests)} />
+                <StatCard label="Daily Write Req" value={extractValue(data.daily_write_requests)} />
+                <StatCard label="Monthly Read Req" value={extractValue(data.total_monthly_read_requests)} />
+                <StatCard label="Monthly Write Req" value={extractValue(data.total_monthly_write_requests)} />
               </div>
             </div>
 

@@ -1,0 +1,55 @@
+:root {
+  /* =========================================
+     Premium Dark Theme (Crimson & Soft Orange)
+     ========================================= */
+  
+  /* Backgrounds & Surfaces */
+  --bg: #0D0F12;
+  --surface: #14171C;
+  --surface-2: #1B1F26;
+  --bg-surface: #14171C;
+  
+  /* Text */
+  --text: #F0F2F5;
+  --text-primary: #F0F2F5;
+  --soft: #A0A5B0;
+  --muted: #6B7280;
+  
+  /* Borders */
+  --border: #22262F;
+  --border-2: #2D333E;
+  --border-color: #22262F;
+  
+  /* 
+   * Primary Action (Re-mapping var(--blue) to Crimson)
+   * The user requested NO blue or purple. 
+   */
+  --blue: #C0392B;           /* Rich Crimson */
+  --pacific-cyan: #A93226;   /* Darker Crimson for hover */
+  
+  /* 
+   * Status/Tags/Accents (Warm Palette) 
+   */
+  --green: #E67E22;          /* Soft Orange */
+  --green-bg: rgba(230, 126, 34, 0.1);
+  --green-bd: rgba(230, 126, 34, 0.3);
+  
+  --yellow: #F39C12;         /* Golden */
+  --yellow-bg: rgba(243, 156, 18, 0.1);
+  --yellow-bd: rgba(243, 156, 18, 0.3);
+  
+  --red: #E74C3C;            /* Bright Red */
+  --red-bg: rgba(231, 76, 60, 0.1);
+  --red-bd: rgba(231, 76, 60, 0.3);
+  
+  /* Terminal & Special Elements */
+  --iron-grey: #1A1D24;
+  --blue-slate: #22262F;
+  --pale-slate: #A0A5B0;
+  --alabaster-grey: #F0F2F5;
+  
+  /* Shadows */
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+  --disabled: #4B5563;
