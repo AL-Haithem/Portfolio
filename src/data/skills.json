@@ -5,7 +5,7 @@
     "categories": [
       {
         "name": "Languages & Technologies",
-        "items": ["JavaScript", "Python", "Luau","CSS","HTML","Node.js", "Express","React"]
+        "items": ["JavaScript", "Python", "Luau", "CSS", "HTML", "Node.js", "Express", "React", "MapLibreGL", "ArcGis"]
       },
       {
         "name": "Application Development",
@@ -21,7 +21,7 @@
       },
       {
         "name": "Authentication & Authorization",
-        "items": ["Session Authentication", "JWT", "API Keys", "RBAC", "Permissions"]
+        "items": ["Session Authentication", "OAuth 2.0", "JWT", "API Keys", "RBAC", "Permissions"]
       },
       {
         "name": "Application Security",

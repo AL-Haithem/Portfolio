@@ -34,6 +34,7 @@ function InfoModal({ title, children, onClose }) {
 			<div className="auth-modal-content" style={{ maxWidth: '900px', width: '90%', maxHeight: '90vh', overflowY: 'auto', padding: '30px' }} onClick={(event) => event.stopPropagation()}>
 				<button className="auth-modal-close" onClick={onClose} aria-label="Close">&times;</button>
 				<h2 style={{ margin: '0 0 18px', color: 'var(--green, #E67E22)' }}>{title}</h2>
+				{title === 'How it works - Loot Website' && <div style={{ marginBottom: '18px' }}><a href="https://loot.alhaithem.site" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ display: 'inline-block', padding: '9px 14px', textDecoration: 'none', background: 'var(--green, #E67E22)', color: '#000', fontWeight: 'bold' }}>Open Loot Store in New Tab</a></div>}
 				{children}
 			</div>
 		</div>
