@@ -356,7 +356,7 @@ export default function AuthModal({ open, onClose }) {
               <button id="tab-register" className={`auth-tab ${tab === 'register' ? 'active' : ''}`} onClick={() => {setTab('register'); showMsg(''); clearSim()}}>Register</button>
               <button id="tab-forgot" className={`auth-tab ${tab === 'forgot' ? 'active' : ''}`} onClick={() => {setTab('forgot'); showMsg(''); clearSim()}}>Reset Password</button>
             </div>
-            <div id="auth-message" style={{ color: msgError ? '#f87171' : '#4ade80', marginBottom: '15px', fontSize: '14px', textAlign: 'center' }}>{message}</div>
+            <div id="auth-message" style={{ color: msgError ? 'var(--red)' : 'var(--green)', marginBottom: '15px', fontSize: '14px', textAlign: 'center' }}>{message}</div>
             
             {!currentUser && tab === 'login' && (
               <form id="login-form" onSubmit={handleLogin}>
@@ -396,7 +396,7 @@ export default function AuthModal({ open, onClose }) {
                   <label htmlFor="forgot-email">Email</label>
                   <div style={{display: 'flex', gap: '10px'}}>
                     <input type="email" id="forgot-email" required style={{flex: 1}} value={forgotEmail} onChange={e => setForgotEmail(e.target.value)} disabled={otpSent} />
-                    <button type="button" id="send-otp-btn" className="btn btn-outline" style={{padding: '10px 15px', whiteSpace: 'nowrap', fontSize: '13px', border: '1px solid #4ade80', color: '#4ade80', background: 'transparent', borderRadius: '6px', cursor: 'pointer'}} onClick={handleSendOtp} disabled={loading || otpSent}>
+                    <button type="button" id="send-otp-btn" className="btn btn-outline" style={{padding: '10px 15px', whiteSpace: 'nowrap', fontSize: '13px', border: '1px solid var(--green)', color: 'var(--green)', background: 'transparent', borderRadius: '6px', cursor: 'pointer'}} onClick={handleSendOtp} disabled={loading || otpSent}>
                       Send OTP
                     </button>
                   </div>
@@ -422,7 +422,7 @@ export default function AuthModal({ open, onClose }) {
             {currentUser && (
               <div id="dashboard-view" style={{textAlign: 'center', marginTop: '20px'}}>
                 <p style={{fontSize: '2.5rem', marginBottom: '10px'}}>&#10003;</p>
-                <h4 style={{color: 'var(--green, #4ade80)', marginBottom: '8px'}}>Welcome, <span id="user-name-display">{currentUser.name}</span>!</h4>
+                <h4 style={{color: 'var(--green)', marginBottom: '8px'}}>Welcome, <span id="user-name-display">{currentUser.name}</span>!</h4>
                 <p style={{fontSize: '13px', marginBottom: '20px', opacity: 0.6}}>Authenticated</p>
               </div>
             )}

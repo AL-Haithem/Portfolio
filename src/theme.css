@@ -20,12 +20,9 @@
   --border-2: #2D333E;
   --border-color: #22262F;
   
-  /* 
-   * Primary Action (Re-mapping var(--blue) to Crimson)
-   * The user requested NO blue or purple. 
-   */
-  --blue: #C0392B;           /* Rich Crimson */
-  --pacific-cyan: #A93226;   /* Darker Crimson for hover */
+  /* Primary action uses the Works documentation orange. */
+  --blue: #E67E22;
+  --pacific-cyan: #C76A18;
   
   /* 
    * Status/Tags/Accents (Warm Palette) 
@@ -50,6 +47,5 @@
   
   /* Shadows */
   --shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-}
-
   --disabled: #4B5563;
+}
