@@ -40,7 +40,7 @@ html {
 
 body {
   background-color: var(--bg);
-  background-image: linear-gradient(to bottom, rgba(8, 8, 8, 0.92), rgba(8, 8, 8, 0.92)), url('/hero-bg.jpg');
+  background-image: linear-gradient(to bottom, rgba(8, 8, 8, 0.82), rgba(8, 8, 8, 0.82)), url('/background-servers.png');
   background-size: cover;
   background-position: top center;
   background-repeat: no-repeat;
