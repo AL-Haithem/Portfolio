@@ -5,7 +5,7 @@
     "categories": [
       {
         "name": "Languages & Technologies",
-        "items": ["JavaScript", "Python", "Luau", "CSS", "HTML", "Node.js", "Express", "React", "MapLibreGL", "ArcGis"]
+        "items": ["JavaScript", "Python", "Luau", "CSS", "HTML", "Node.js", "Express", "React", "Vite", "React Router", "Axios", "react-map-gl", "MapLibreGL", "PMTiles", "GeoJSON", "ArcGis", "SlickPay"]
       },
       {
         "name": "Application Development",
@@ -13,7 +13,7 @@
       },
       {
         "name": "API Development",
-        "items": ["REST API", "WebSockets", "SSE", "Long Polling","RESTful Design", "Pagination", "Filtering", "Sorting", "Search", "Idempotency"]
+        "items": ["REST API", "WebSockets", "SSE", "Long Polling", "RESTful Design", "Pagination", "Filtering", "Sorting", "Search", "Idempotency", "Payment Gateway Integration", "Webhook Integration"]
       },
       {
         "name": "Databases",
